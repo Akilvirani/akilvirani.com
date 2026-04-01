@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Akil Virani</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f2ede6;
+  --cream2:#ede7de;
+  --parchment:#e6dfd5;
+  --charcoal:#1c1917;
+  --charcoal2:#2c2926;
+  --warm:#4a4540;
+  --muted:#8c877f;
+  --rule:#d4cdc4;
+  --terra:#b85c38;
+  --terra-light:#f0e4dc;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--charcoal);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:var(--terra);color:var(--cream)}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 3.5rem;
+  mix-blend-mode:normal;
+}
+nav.scrolled{
+  background:rgba(242,237,230,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  padding:1rem 3.5rem;
+  transition:all 0.3s;
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:600;
+  letter-spacing:0.08em;
+  color:var(--charcoal);
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.nav-right{display:flex;align-items:center;gap:3rem}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{
+  font-size:0.72rem;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--warm);text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--charcoal)}
+.nav-book{
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cream);background:var(--charcoal);
+  padding:0.55rem 1.4rem;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+.nav-book:hover{background:var(--terra)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:1fr auto;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+.hero-main{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+.hero-left{
+  background:var(--charcoal);
+  padding:10rem 4rem 4rem;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;
+}
+.hero-left::after{
+  content:'';
+  position:absolute;top:0;right:0;bottom:0;
+  width:1px;background:rgba(255,255,255,0.08);
+}
+.hero-issue{
+  font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+  margin-bottom:2.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-issue::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.3)}
+.hero-name-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(4rem,7vw,7rem);
+  font-weight:300;
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  color:#fff;
+  margin-bottom:0.25rem;
+}
+.hero-name-big em{
+  display:block;
+  font-style:italic;
+  font-weight:300;
+  color:var(--terra);
+  font-size:clamp(4.5rem,8vw,8rem);
+}
+.hero-rule{
+  width:48px;height:1px;background:var(--terra);
+  margin:2rem 0;
+}
+.hero-role{
+  font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+  line-height:2;
+}
+
+.hero-right{
+  background:var(--cream2);
+  padding:10rem 4rem 4rem;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;
+}
+.hero-portrait-zone{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  overflow:hidden;
+}
+.portrait-fill{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--parchment);
+  gap:1rem;
+}
+.portrait-letter{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12rem;font-weight:300;
+  color:var(--rule);
+  line-height:1;
+  user-select:none;
+}
+.portrait-hint{
+  font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);
+}
+.hero-caption{
+  position:relative;z-index:2;
+  background:rgba(242,237,230,0.9);
+  backdrop-filter:blur(8px);
+  padding:1.25rem 1.5rem;
+  border-left:2px solid var(--terra);
+}
+.hc-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem}
+.hc-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--charcoal);line-height:1.4}
+
+.hero-ticker{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-top:1px solid var(--rule);
+}
+.ticker-block{
+  padding:2rem 2.5rem;
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;justify-content:flex-start;gap:0.5rem;
+}
+.ticker-block:last-child{border-right:none}
+.tb-num{
+  font-family:'Outfit',sans-serif;
+  font-size:2.25rem;font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--charcoal);line-height:1;
+}
+.tb-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+
+/* EDITORIAL SECTION */
+.editorial{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  min-height:80vh;
+  border-top:1px solid var(--rule);
+}
+.ed-sidebar{
+  padding:5rem 3rem;
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.ed-section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:6rem;font-weight:300;
+  color:var(--rule);line-height:1;
+  letter-spacing:-0.04em;
+}
+.ed-section-title{
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--terra);writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  margin-top:1.5rem;
+}
+.ed-nav-dots{display:flex;flex-direction:column;gap:0.75rem}
+.dot-item{display:flex;align-items:center;gap:0.75rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.dot-item:hover{color:var(--charcoal)}
+.dot-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--rule);flex-shrink:0;transition:background 0.2s}
+.dot-item:hover::before{background:var(--terra)}
+.dot-item.active{color:var(--charcoal)}
+.dot-item.active::before{background:var(--terra)}
+
+.ed-content{padding:5rem 3.5rem}
+.ed-overline{
+  font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--terra);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.ed-overline::after{content:'';flex:1;max-width:48px;height:1px;background:var(--terra)}
+.ed-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,4.5vw,4rem);
+  font-weight:300;line-height:1.1;
+  letter-spacing:-0.02em;
+  color:var(--charcoal);
+  margin-bottom:2rem;
+}
+.ed-headline em{font-style:italic;color:var(--terra)}
+.ed-body{
+  font-size:0.92rem;color:var(--warm);
+  line-height:1.9;max-width:58ch;
+  margin-bottom:2rem;
+  columns:2;column-gap:3rem;
+}
+.ed-body p+p{margin-top:1rem}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2.5rem}
+.chip{
+  padding:0.4rem 1rem;
+  border:1px solid var(--rule);
+  font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--warm);
+  transition:all 0.2s;cursor:default;
+}
+.chip:hover{border-color:var(--terra);color:var(--terra)}
+
+/* PHOTOGRAPHY SPREAD */
+.photo-spread{
+  border-top:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  min-height:60vh;
+}
+.spread-panel{
+  border-right:1px solid var(--rule);
+  position:relative;
+  overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:2rem;
+  min-height:400px;
+}
+.spread-panel:last-child{border-right:none}
+.spread-bg{
+  position:absolute;inset:0;
+  background-size:cover!important;
+  background-position:center!important;
+  transition:transform 0.5s ease;
+}
+.spread-panel:hover .spread-bg{transform:scale(1.04)}
+.spread-panel:nth-child(1){background:var(--parchment)}
+.spread-panel:nth-child(2){background:var(--charcoal)}
+.spread-panel:nth-child(3){background:var(--cream2)}
+.spread-panel:nth-child(2) .spread-bg{color:rgba(255,255,255,0.08)}
+.spread-label{
+  position:relative;z-index:1;
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.4rem;
+}
+.spread-panel:nth-child(2) .spread-label{color:rgba(255,255,255,0.4)}
+.spread-title{
+  position:relative;z-index:1;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:400;
+  color:var(--charcoal);line-height:1.2;
+}
+.spread-panel:nth-child(2) .spread-title{color:#fff}
+.spread-link{
+  position:relative;z-index:1;
+  margin-top:0.75rem;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--terra);text-decoration:none;
+  display:inline-flex;align-items:center;gap:0.5rem;
+  transition:gap 0.2s;
+}
+.spread-link:hover{gap:0.75rem}
+.spread-link::after{content:'→'}
+
+/* SERVICES GRID */
+.services-section{
+  border-top:1px solid var(--rule);
+  padding:6rem 3.5rem;
+}
+.sec-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:end;
+  margin-bottom:5rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid var(--rule);
+}
+.sec-overline{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--terra);margin-bottom:1rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:300;letter-spacing:-0.02em;line-height:1.1;color:var(--charcoal)}
+.sec-title em{font-style:italic}
+.sec-desc{font-size:0.88rem;color:var(--muted);line-height:1.85;max-width:42ch;align-self:end}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.svc-item{
+  padding:2.5rem 2rem;
+  border:1px solid var(--rule);
+  border-right:none;border-bottom:none;
+  position:relative;
+  transition:background 0.2s;
+}
+.svc-item:nth-child(3n){border-right:1px solid var(--rule)}
+.svc-item:nth-child(n+4){border-bottom:1px solid var(--rule)}
+.svc-item:last-child{border-bottom:1px solid var(--rule)}
+.svc-item:hover{background:var(--terra-light)}
+.svc-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;font-weight:300;
+  color:var(--rule);line-height:1;
+  margin-bottom:1.25rem;
+  letter-spacing:-0.03em;
+}
+.svc-t{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:0.6rem}
+.svc-d{font-size:0.82rem;color:var(--muted);line-height:1.75}
+
+/* FULL BLEED CTA */
+.fullbleed{
+  background:var(--charcoal2);
+  padding:7rem 3.5rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:4rem;align-items:center;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.fb-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--terra);margin-bottom:1.25rem}
+.fb-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:300;line-height:1.05;
+  letter-spacing:-0.02em;
+  color:#fff;
+  max-width:20ch;
+}
+.fb-title em{font-style:italic;color:rgba(255,255,255,0.5)}
+.btn-terra{
+  padding:1rem 2.5rem;
+  background:var(--terra);color:#fff;
+  font-family:'Outfit',sans-serif;
+  font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  white-space:nowrap;
+  transition:background 0.2s,transform 0.15s;
+  display:inline-block;
+}
+.btn-terra:hover{background:#a04d2e;transform:translateY(-2px)}
+
+/* CONTACT */
+.contact-section{
+  border-top:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.contact-left{
+  padding:6rem 3.5rem;
+  border-right:1px solid var(--rule);
+}
+.contact-right{
+  padding:6rem 3.5rem;
+  background:var(--cream2);
+}
+.contact-links{display:flex;flex-direction:column;gap:1px;margin-top:3rem;border:1px solid var(--rule)}
+.cl{
+  display:flex;align-items:center;gap:1.25rem;
+  padding:1.25rem 1.5rem;
+  background:var(--cream);
+  text-decoration:none;color:var(--charcoal);
+  border-bottom:1px solid var(--rule);
+  transition:background 0.18s,padding-left 0.18s;
+}
+.cl:last-child{border-bottom:none}
+.cl:hover{background:var(--terra-light);padding-left:1.75rem}
+.cl-ico{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.8rem;font-weight:600;
+  width:36px;height:36px;
+  border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--terra);flex-shrink:0;
+  letter-spacing:0.05em;
+}
+.cl-name{font-size:0.78rem;font-weight:500;color:var(--charcoal)}
+.cl-val{font-size:0.72rem;color:var(--muted);margin-top:0.1rem}
+
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:400;color:var(--charcoal);margin-bottom:2rem;line-height:1.2}
+.fg{margin-bottom:1.1rem}
+.fl{display:block;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.fi,.ft{
+  width:100%;
+  background:var(--cream);
+  border:1px solid var(--rule);
+  border-radius:0;
+  color:var(--charcoal);
+  font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:300;
+  padding:0.75rem 1rem;
+  outline:none;
+  transition:border-color 0.18s;
+  resize:vertical;
+  -webkit-appearance:none;
+}
+.fi:focus,.ft:focus{border-color:var(--terra)}
+.fi::placeholder,.ft::placeholder{color:var(--rule)}
+.submit-btn{
+  width:100%;padding:1rem;
+  background:var(--charcoal);color:#fff;
+  font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  transition:background 0.2s;
+  margin-top:0.5rem;
+}
+.submit-btn:hover{background:var(--terra)}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--rule);
+  padding:2rem 3.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);text-decoration:none}
+.foot-copy{font-size:0.68rem;letter-spacing:0.1em;color:var(--muted)}
+
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero-left > *{animation:fadeIn 0.7s ease both}
+.hero-issue{animation-delay:0.1s}
+.hero-name-big{animation-delay:0.2s}
+.hero-rule{animation-delay:0.3s}
+.hero-role{animation-delay:0.4s}
+.hero-right{animation:fadeIn 0.9s 0.15s ease both}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-main{grid-template-columns:1fr}
+  .hero-left{min-height:60vh;padding:8rem 2.5rem 3rem}
+  .hero-right{min-height:50vh;padding:0}
+  .hero-caption{margin:1.5rem}
+  .editorial{grid-template-columns:1fr}
+  .ed-sidebar{display:none}
+  .ed-content{padding:4rem 2.5rem}
+  .ed-body{columns:1}
+  .photo-spread{grid-template-columns:1fr}
+  .spread-panel{border-right:none;border-bottom:1px solid var(--rule);min-height:240px}
+  .sec-header{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-item:nth-child(2n){border-right:1px solid var(--rule)}
+  .fullbleed{grid-template-columns:1fr;padding:5rem 2.5rem}
+  .contact-section{grid-template-columns:1fr}
+  .contact-left{border-right:none;border-bottom:1px solid var(--rule);padding:4rem 2.5rem}
+  .contact-right{padding:4rem 2.5rem}
+}
+@media(max-width:640px){
+  nav,nav.scrolled{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-item:nth-child(n){border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .ticker-block{padding:1rem 1.25rem}
+  .services-section{padding:4rem 1.5rem}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="logo" href="#top">Akil Virani</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#writing">Writing</a></li>
+    </ul>
+    <a href="#contact" class="nav-book">Say Hello</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-main">
+    <div class="hero-left">
+      <p class="hero-issue">Seattle, Washington</p>
+      <h1 class="hero-name-big">Akil<em>Virani</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-role">
+        <span style="background:var(--terra);color:#fff;padding:0.2rem 0.5rem;display:inline;line-height:1.9;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Wedding, Portrait and Brand Photographer &nbsp;·&nbsp; Akil Virani Photography</span><br/>
+        <span style="background:var(--terra);color:#fff;padding:0.2rem 0.5rem;display:inline;line-height:1.9;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Sales Growth Manager &nbsp;·&nbsp; AAA Washington</span>
+      </p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-portrait-zone">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85&fit=crop&crop=faces" alt="Akil Virani" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+      </div>
+      <div class="hero-caption">
+        <p class="hc-label">Seattle, WA</p>
+        <p class="hc-text">Building people, brands,<br/>and moments that last</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <div class="ticker-block">
+      <span class="tb-num">AVP</span>
+      <span class="tb-label">Akil Virani Photography</span>
+    </div>
+    <div class="ticker-block">
+      <span class="tb-num">10+</span>
+      <span class="tb-label">Years in Photography</span>
+    </div>
+    <div class="ticker-block">
+      <span class="tb-num">AAA</span>
+      <span class="tb-label">Washington</span>
+    </div>
+    <div class="ticker-block">
+      <span class="tb-num">3</span>
+      <span class="tb-label">Insurance Licenses</span>
+    </div>
+    <div class="ticker-block">
+      <span class="tb-num">SEA</span>
+      <span class="tb-label">Based in Seattle</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL ABOUT -->
+<section class="editorial" id="about">
+  <div class="ed-sidebar">
+    <div>
+      <div class="ed-section-num">01</div>
+      <div class="ed-section-title">About</div>
+    </div>
+    <nav class="ed-nav-dots">
+      <a href="#about" class="dot-item active">About</a>
+      <a href="#work" class="dot-item">Work</a>
+      <a href="#services" class="dot-item">Services</a>
+      <a href="#contact" class="dot-item">Contact</a>
+    </nav>
+  </div>
+  <div class="ed-content">
+    <p class="ed-overline">Who I Am</p>
+    <h2 class="ed-headline">I'm Akil!</h2>
+    <div class="ed-body">
+      <p>A Seattle based Sales Growth Manager, Photographer and someone who genuinely believes the best version of you deserves to be seen. I've spent over a decade coaching people to perform better and capturing moments that tell the truth about who they are.</p>
+      <p>At AAA Washington I lead the Insurance Academy, developing agents, building systems, and creating cultures where people actually grow. Away from the office, I'm behind the lens as <strong>Akil Virani Photography</strong>, shooting weddings, portraits, and personal brands across the Pacific Northwest on my Sony A7 IV.</p>
+    </div>
+    <div class="chip-row">
+      <span class="chip">Sales Leadership</span>
+      <span class="chip">Agent Development</span>
+      <span class="chip">Personal Branding</span>
+      <span class="chip">Photography</span>
+      <span class="chip">Weddings</span>
+      <span class="chip">Portraits</span>
+      <span class="chip">LinkedIn Content</span>
+      <span class="chip">Seattle</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO SPREAD -->
+<div class="photo-spread" id="work">
+  <div class="spread-panel" style="background:none">
+    <div class="spread-bg" style="background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fit=crop') center/cover no-repeat;opacity:0.6;font-size:0"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(28,25,23,0.85) 40%, transparent 100%)"></div>
+    <p class="spread-label">Through the lens</p>
+    <h3 class="spread-title" style="color:#fff">Images that<br/>tell the truth</h3>
+    <a href="https://akilviraniphotography.com" target="_blank" class="spread-link">See my photography</a>
+  </div>
+  <div class="spread-panel" style="background:none">
+    <div class="spread-bg" style="background:url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=85&fit=crop') center/cover no-repeat;opacity:0.55;font-size:0"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(28,25,23,0.9) 40%, transparent 100%)"></div>
+    <p class="spread-label" style="color:rgba(255,255,255,0.55)">Weddings & Portraits</p>
+    <h3 class="spread-title" style="color:#fff">Moments I'm<br/>trusted to keep</h3>
+    <a href="https://akilviraniphotography.com" target="_blank" class="spread-link">See my photography</a>
+  </div>
+  <div class="spread-panel" style="background:none">
+    <div class="spread-bg" style="background:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=85&fit=crop') center/cover no-repeat;opacity:0.4;font-size:0"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(242,237,230,0.92) 40%, transparent 100%)"></div>
+    <p class="spread-label">In the office</p>
+    <h3 class="spread-title">Growing people<br/>on purpose</h3>
+    <a href="#contact" class="spread-link">Let's connect</a>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section class="services-section" id="writing">
+  <div class="sec-header">
+    <div>
+      <p class="sec-overline">What I do</p>
+      <h2 class="sec-title">How I spend<br/><em>my time</em></h2>
+    </div>
+    <p class="sec-desc">I move between two worlds — the boardroom and the lens. Both are about the same thing: helping people show up as their best self.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-item">
+      <div class="svc-n">01</div>
+      <p class="svc-t">Leading Sales Teams</p>
+      <p class="svc-d">I manage and develop insurance agents at AAA Washington — building the habits, accountability, and belief systems that make long careers possible.</p>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">02</div>
+      <p class="svc-t">Brand Photography</p>
+      <p class="svc-d">I photograph professionals, entrepreneurs, and small businesses who want their image to say something real about who they are before they ever speak.</p>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">03</div>
+      <p class="svc-t">Wedding Photography</p>
+      <p class="svc-d">I show up for people on the biggest days of their lives. Not to perform — just to be present and capture what's actually happening.</p>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">04</div>
+      <p class="svc-t">Writing on LinkedIn</p>
+      <p class="svc-d">I write about sales, leadership, personal brand, and what it really takes to build a career with intention. No fluff — just honest takes.</p>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">05</div>
+      <p class="svc-t">Personal Brand Thinking</p>
+      <p class="svc-d">I'm deeply interested in how people position themselves — online and off. It's something I think about, experiment with, and talk about constantly.</p>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">06</div>
+      <p class="svc-t">Conversations & Speaking</p>
+      <p class="svc-d">I enjoy panels, podcasts, and real conversations about building dual-identity careers, showing up authentically, and the intersection of craft and leadership.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED CTA -->
+<div class="fullbleed">
+  <div>
+    <p class="fb-eyebrow">Akil Virani Photography</p>
+    <h2 class="fb-title">See the work<br/><em>behind the lens</em></h2>
+  </div>
+  <a href="https://akilviraniphotography.com" target="_blank" class="btn-terra">akilviraniphotography.com →</a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left">
+    <p class="sec-overline">Connect</p>
+    <h2 class="sec-title" style="font-size:2.25rem;margin-bottom:1rem">I'd love to<br/><em>hear from you</em></h2>
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.85;max-width:34ch">Whether you want to grab coffee, talk photography, discuss an idea, or just say hi — my door is genuinely open.</p>
+    <div class="contact-links">
+      <a class="cl" href="https://akilviraniphotography.com" target="_blank">
+        <div class="cl-ico">AP</div>
+        <div><div class="cl-name">Photography Site</div><div class="cl-val">akilviraniphotography.com</div></div>
+      </a>
+      <a class="cl" href="https://linkedin.com/in/akilvirani" target="_blank">
+        <div class="cl-ico">in</div>
+        <div><div class="cl-name">LinkedIn</div><div class="cl-val">Connect professionally</div></div>
+      </a>
+      <a class="cl" href="mailto:contact.akilvirani@gmail.com">
+        <div class="cl-ico">☕</div>
+        <div><div class="cl-name">Coffee Chat</div><div class="cl-val">Let's meet in person or virtually</div></div>
+      </a>
+      <div class="cl" style="cursor:default">
+        <div class="cl-ico">📍</div>
+        <div><div class="cl-name">Location</div><div class="cl-val">Seattle, Washington</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <p class="form-title">Drop me a note</p>
+    <div class="fg"><label class="fl">Your name</label><input type="text" class="fi" placeholder="Jane Smith"/></div>
+    <div class="fg"><label class="fl">Email address</label><input type="email" class="fi" placeholder="jane@company.com"/></div>
+    <div class="fg"><label class="fl">What's on your mind</label><input type="text" class="fi" placeholder="Photography, leadership, a collab idea…"/></div>
+    <div class="fg"><label class="fl">Message</label><textarea class="ft" rows="5" placeholder="Say whatever you want — no pitch needed."></textarea></div>
+    <button class="submit-btn">Send it →</button>
+  </div>
+</section>
+
+<footer>
+  <a class="foot-logo" href="#top">Akil Virani</a>
+  <span class="foot-copy">© 2026 &nbsp;·&nbsp; Akil Virani &nbsp;·&nbsp; Seattle, WA</span>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.className = window.scrollY > 40 ? 'scrolled' : '';
+});
+</script>
+</body>
+</html>
