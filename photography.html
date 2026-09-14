@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography — Akil Virani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-wordmark">
+      <svg class="nav-logo-svg" viewBox="0 0 120 62" xmlns="http://www.w3.org/2000/svg">
+        <text x="60" y="28" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-weight="300" text-anchor="middle" fill="rgba(247,242,236,0.92)">Akil</text>
+        <text x="60" y="57" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-style="italic" font-weight="300" text-anchor="middle" fill="#c4714d">Virani</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="what-i-do.html">What I Do</a></li>
+      <li><a href="photography.html" class="active">Photography</a></li>
+      <li><a href="contact.html" class="nav-cta">Say Hello</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="about.html"       class="mobile-link">About</a></li>
+      <li><a href="work.html"        class="mobile-link">Work</a></li>
+      <li><a href="what-i-do.html"  class="mobile-link">What I Do</a></li>
+      <li><a href="photography.html" class="mobile-link">Photography</a></li>
+      <li><a href="contact.html"     class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <p class="eyebrow">Photography</p>
+      <h1>Akil Virani<br /><em>Photography</em></h1>
+      <p>Weddings, portraits, and brand sessions across the Pacific Northwest.</p>
+    </div>
+  </section>
+
+  <!-- Photo grid -->
+  <section class="photography section">
+    <div class="container">
+      <div class="photography-inner" style="grid-template-columns: 1.4fr 1fr; direction: rtl;">
+        <div class="photography-grid" style="direction: ltr;">
+          <div class="pg-1 fade-up">
+            <img src="images/AVP Couple downtown.jpg" alt="Wedding couple" class="pg-img" style="object-position: 62% 15%;" />
+          </div>
+          <div class="pg-2 fade-up">
+            <img src="images/AVP Sea couple 2.jpg" alt="Couples by the water" class="pg-img" style="object-position: center top;" />
+          </div>
+          <div class="pg-3 fade-up">
+            <img src="images/AVP bride sitting smiling.jpg" alt="Bridal portrait" class="pg-img" style="object-position: center 40%;" />
+          </div>
+        </div>
+        <div class="photography-header fade-up" style="direction: ltr;">
+          <p class="eyebrow">The Work</p>
+          <h2>Every frame<br /><em>intentional</em></h2>
+          <p class="photography-sub">
+            I shoot weddings, couples, portraits, and personal branding sessions with the
+            same intention — make it feel true. Warm, cinematic, and rooted in real moments.
+            Shot on Sony A7 IV, edited by hand.
+          </p>
+          <a href="https://www.instagram.com/akilviraniphotography" target="_blank" rel="noopener" class="btn-outline light">
+            View on Instagram &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" style="background: var(--warm); padding-top: 5rem;">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2>What I<br /><em>shoot</em></h2>
+      </div>
+      <div class="work-grid">
+        <div class="work-card fade-up">
+          <div class="work-card-header">
+            <span class="work-tag">Most Booked</span>
+            <p class="work-company">Weddings</p>
+          </div>
+          <h3>Weddings &amp;<br />Elopements</h3>
+          <p class="work-desc">Full-day coverage from getting ready to the last dance. Candid, cinematic, and completely yours.</p>
+          <ul class="work-pillars">
+            <li>4–10 hours of coverage</li>
+            <li>400+ hand-edited images</li>
+            <li>Engagement session available</li>
+            <li>Private online gallery</li>
+          </ul>
+          <div class="work-card-footer">
+            <a href="contact.html" class="work-link" style="color: var(--terra); border-color: rgba(196,113,77,0.3);">Inquire &rarr;</a>
+          </div>
+        </div>
+        <div class="work-card work-card--dark fade-up">
+          <div class="work-card-header">
+            <span class="work-tag">Portraits</span>
+            <p class="work-company">Individuals &amp; Couples</p>
+          </div>
+          <h3>Portraits, Couples<br />&amp; Branding</h3>
+          <p class="work-desc">Whether it's a couples session in the PNW or a brand shoot downtown — relaxed, real, and beautifully lit.</p>
+          <ul class="work-pillars">
+            <li>1–3 hour sessions</li>
+            <li>40–80+ edited images</li>
+            <li>Multiple looks available</li>
+            <li>Commercial use license (branding)</li>
+          </ul>
+          <div class="work-card-footer">
+            <a href="contact.html" class="work-link">Inquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVP Banner -->
+  <section class="avp-banner">
+    <div class="container-narrow avp-banner-inner">
+      <p class="eyebrow">Full Portfolio</p>
+      <h2>See all the work at<br /><em>Akil Virani Photography</em></h2>
+      <a href="https://www.akilviraniphotography.com/" target="_blank" rel="noopener" class="avp-banner-btn">
+        Visit akilviraniphotography.com &rarr;
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Akil Virani</span>
+      <span class="footer-copy">&copy; 2026 &nbsp;·&nbsp; Seattle, WA</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akilvirani/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/akilvirani/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

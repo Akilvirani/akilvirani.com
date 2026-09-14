@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What I Do — Akil Virani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-wordmark">
+      <svg class="nav-logo-svg" viewBox="0 0 120 62" xmlns="http://www.w3.org/2000/svg">
+        <text x="60" y="28" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-weight="300" text-anchor="middle" fill="rgba(247,242,236,0.92)">Akil</text>
+        <text x="60" y="57" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-style="italic" font-weight="300" text-anchor="middle" fill="#c4714d">Virani</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="what-i-do.html" class="active">What I Do</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="contact.html" class="nav-cta">Say Hello</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="about.html"       class="mobile-link">About</a></li>
+      <li><a href="work.html"        class="mobile-link">Work</a></li>
+      <li><a href="what-i-do.html"  class="mobile-link">What I Do</a></li>
+      <li><a href="photography.html" class="mobile-link">Photography</a></li>
+      <li><a href="contact.html"     class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <p class="eyebrow">What I Do</p>
+      <h1>Skills &amp;<br /><em>strengths</em></h1>
+      <p>A blend of business acumen and creative craft — built across two careers.</p>
+    </div>
+  </section>
+
+  <section class="what-i-do section">
+    <div class="container">
+      <div class="what-i-do-inner">
+        <div class="section-header fade-up" style="margin-bottom:0;">
+          <p class="eyebrow">Sales &amp; Growth</p>
+          <h2>Business<br /><em>side</em></h2>
+        </div>
+        <div class="skills-list">
+          <div class="skill-row fade-up">
+            <span class="skill-num">01</span>
+            <span class="skill-name">Sales Strategy</span>
+            <span class="skill-desc">Designing and executing growth programs that connect team capability to business outcomes. From pipeline to close.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">02</span>
+            <span class="skill-name">Team Leadership</span>
+            <span class="skill-desc">Coaching sales teams to find their stride — clear goals, honest feedback, and the space to actually grow.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">03</span>
+            <span class="skill-name">Growth Analytics</span>
+            <span class="skill-desc">Turning sales data into actionable insight. Finding the signal in the noise and building around it.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">04</span>
+            <span class="skill-name">Relationship Building</span>
+            <span class="skill-desc">Creating the kind of trust that turns a first interaction into a lasting partnership — in business and in life.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="what-i-do section" style="padding-top:0;">
+    <div class="container">
+      <div class="what-i-do-inner">
+        <div class="section-header fade-up" style="margin-bottom:0;">
+          <p class="eyebrow">Photography</p>
+          <h2>Creative<br /><em>side</em></h2>
+        </div>
+        <div class="skills-list">
+          <div class="skill-row fade-up">
+            <span class="skill-num">05</span>
+            <span class="skill-name">Wedding Photography</span>
+            <span class="skill-desc">Full-day coverage that captures how the day actually felt — candid, cinematic, and completely yours.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">06</span>
+            <span class="skill-name">Portrait Photography</span>
+            <span class="skill-desc">Individual sessions that capture how you actually feel — relaxed, confident, present. No forced poses.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">07</span>
+            <span class="skill-name">Brand Photography</span>
+            <span class="skill-desc">Imagery for entrepreneurs and creatives who want visuals that match the quality of their work.</span>
+          </div>
+          <div class="skill-row fade-up">
+            <span class="skill-num">08</span>
+            <span class="skill-name">Couples &amp; Engagement</span>
+            <span class="skill-desc">PNW sessions for engagements, anniversaries, or just because. Natural, warm, and entirely you.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="quote-band">
+    <div class="container-narrow" style="text-align:center;">
+      <blockquote class="fade-up">
+        "Every skill I have started with <em>paying attention.</em>"
+      </blockquote>
+      <div style="margin-top:3rem;" class="fade-up">
+        <a href="contact.html" class="btn-outline">Let's work together &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Akil Virani</span>
+      <span class="footer-copy">&copy; 2026 &nbsp;·&nbsp; Seattle, WA</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akilvirani/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/akilvirani/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
